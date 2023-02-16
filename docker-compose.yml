@@ -27,6 +27,7 @@ services:
       - ./db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
+      # rootuser is altijd root
       MYSQL_DATABASE: syntrafs
       MYSQL_USER: username
       MYSQL_PASSWORD: password
