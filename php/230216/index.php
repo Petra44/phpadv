@@ -1,7 +1,9 @@
 <?php
-
-require "Animal.class.php";
-require "Bird.class.php";
+spl_autoload_register(function ($class_name) {
+    include $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'] . 'includes/' . $class_name . '.class.php';
+  });
+// require "Animal.class.php";
+// require "Bird.class.php";
 
 $vogelbekdier = new Animal("Jos");
 $vogelbekdier->setNoise("brrrrr");
@@ -27,3 +29,5 @@ print $merel->fly();
 print "<br />";
 print_r($merel);
 print "<br />";
+
+var_dump($_SERVER);
